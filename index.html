@@ -10,13 +10,23 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
 
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+    />
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
       <div class="container">
-        <div class="logo">
-          <img src="assets/logo.png" alt="Xtraflex Hydraulics Logo" />
+        <div class="header-content">
+          <div class="logo">
+            <img src="assets/logo.png" alt="Xtraflex Hydraulics Logo" />
+          </div>
+          <div class="header-phone">
+            <p>Contact: +91 9620088471</p>
+          </div>
         </div>
       </div>
     </header>
@@ -33,6 +43,14 @@
     </nav>
 
     <main class="container">
+      <section class="promo-image-section">
+        <img
+          src="assets/photo6.png"
+          alt="Xtraflex Contact Information"
+          class="promo-image"
+        />
+      </section>
+
       <section id="about">
         <h2>About Us</h2>
         <p>
@@ -65,31 +83,61 @@
         <div class="swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="assets/photo1.jpg" alt="Hydraulic Hose Assemblies" />
+              <a
+                href="assets/photo1.jpg"
+                data-fancybox="gallery"
+                data-caption="Hydraulic Hose Assemblies"
+              >
+                <img src="assets/photo1.jpg" alt="Hydraulic Hose Assemblies" />
+              </a>
             </div>
             <div class="swiper-slide">
-              <img
-                src="assets/photo2.jpg"
-                alt="Excavator Kits and Tube Assemblies"
-              />
+              <a
+                href="assets/photo2.jpg"
+                data-fancybox="gallery"
+                data-caption="Excavator Kits and Tube Assemblies"
+              >
+                <img
+                  src="assets/photo2.jpg"
+                  alt="Excavator Kits and Tube Assemblies"
+                />
+              </a>
             </div>
             <div class="swiper-slide">
-              <img
-                src="assets/photo3.jpg"
-                alt="Excavator Kits and Tube Assemblies"
-              />
+              <a
+                href="assets/photo3.jpg"
+                data-fancybox="gallery"
+                data-caption="Product Example 3"
+              >
+                <img
+                  src="assets/photo3.jpg"
+                  alt="Excavator Kits and Tube Assemblies"
+                />
+              </a>
             </div>
             <div class="swiper-slide">
-              <img
-                src="assets/photo4.jpg"
-                alt="Excavator Kits and Tube Assemblies"
-              />
+              <a
+                href="assets/photo4.jpg"
+                data-fancybox="gallery"
+                data-caption="Product Example 4"
+              >
+                <img
+                  src="assets/photo4.jpg"
+                  alt="Excavator Kits and Tube Assemblies"
+                />
+              </a>
             </div>
             <div class="swiper-slide">
-              <img
-                src="assets/photo5.jpg"
-                alt="Excavator Kits and Tube Assemblies"
-              />
+              <a
+                href="assets/photo5.jpg"
+                data-fancybox="gallery"
+                data-caption="Product Example 5"
+              >
+                <img
+                  src="assets/photo5.jpg"
+                  alt="Excavator Kits and Tube Assemblies"
+                />
+              </a>
             </div>
           </div>
           <div class="swiper-pagination"></div>
@@ -97,6 +145,7 @@
           <div class="swiper-button-next"></div>
         </div>
       </section>
+
       <section id="specialise">
         <h2>We Specialise In</h2>
         <p>We provide fluid conveyance products for:</p>
@@ -164,26 +213,29 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+
     <script>
+      // Initialize Swiper
       const swiper = new Swiper(".swiper", {
-        // Optional parameters
         loop: true,
         autoplay: {
           delay: 3000,
           disableOnInteraction: false,
         },
-
-        // Add Pagination
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
         },
-
-        // Add Navigation
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
+      });
+
+      // Initialize Fancybox
+      Fancybox.bind("[data-fancybox]", {
+        // Your custom options go here
       });
     </script>
   </body>
