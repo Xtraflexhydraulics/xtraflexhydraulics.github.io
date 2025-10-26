@@ -1,0 +1,200 @@
+/* Basic Reset */
+body,
+h1,
+h2,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Added smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  line-height: 1.6;
+  /* background-color: #f9f9f9; */ /* OLD STYLE */
+  /* --- NEW BACKGROUND --- */
+  background: linear-gradient(
+    to bottom,
+    #ffffff,
+    #f0f2f5
+  ); /* Subtle white-to-light-grey gradient */
+  background-attachment: fixed; /* Keeps the gradient smooth on scroll */
+  /* --- END NEW BACKGROUND --- */
+  color: #333;
+}
+
+.container {
+  width: 85%;
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* Header */
+header {
+  background: #ffffff;
+  color: #333;
+  padding: 20px 0;
+  border-bottom: #00c6ff 4px solid;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* New header layout for logo */
+header .container {
+  display: flex;
+  /* justify-content: space-between; */ /* OLD STYLE */
+  /* --- NEW CENTERING --- */
+  justify-content: center; /* This centers the logo horizontally */
+  /* --- END NEW CENTERING --- */
+  align-items: center;
+}
+
+header .logo img {
+  height: 60px; /* Adjust height as needed */
+  width: auto;
+}
+
+header .header-text {
+  text-align: right;
+}
+
+header h1 {
+  font-size: 28px;
+  color: #004a99;
+  margin: 0;
+}
+
+header .tagline {
+  font-style: italic;
+  font-size: 18px;
+  color: #555;
+  margin: 0;
+}
+
+/* Navigation */
+nav {
+  background: #525151;
+  color: #ffffff;
+  padding: 5px 0;
+  text-align: center;
+  position: sticky; /* Makes nav bar stick to top */
+  top: 0;
+  z-index: 100;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: inline-block;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+/* Nav hover effect */
+nav a:hover {
+  background: #00c6ff;
+  color: #333;
+}
+
+/* Main Content */
+main {
+  padding-top: 30px;
+}
+
+section {
+  background: #ffffff;
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Added shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition */
+}
+
+/* Section hover effect */
+section:hover {
+  transform: translateY(-5px); /* Lifts the section up */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12); /* Increases shadow */
+}
+
+section h2 {
+  color: #004a99;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #f4f4f4;
+  padding-bottom: 10px;
+}
+
+section ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+section ul li {
+  margin-bottom: 10px;
+}
+
+/* --- NEW CAROUSEL STYLES --- */
+.swiper {
+  width: 100%;
+  height: 400px; /* Give the carousel a set height */
+  border-radius: 8px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide content */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  /* --- CSS FIX IS HERE --- */
+  height: 100%; /* Image takes up all of the slide */
+  object-fit: cover;
+}
+
+/* Removed the style for .swiper-slide h3 
+  since it's no longer in the HTML
+*/
+
+/* Style the navigation arrows to match your theme */
+:root {
+  --swiper-navigation-color: #00c6ff;
+  --swiper-pagination-color: #00c6ff;
+}
+/* --- END OF NEW CAROUSEL STYLES --- */
+
+/* Contact Section */
+#contact p {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+#contact a {
+  color: #004a99;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#contact a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: #ffffff;
+  text-align: center;
+  padding: 25px;
+  margin-top: 30px;
+}
