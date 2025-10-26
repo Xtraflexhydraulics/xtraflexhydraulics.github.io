@@ -17,15 +17,12 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif;
   line-height: 1.6;
-  /* background-color: #f9f9f9; */ /* OLD STYLE */
-  /* --- NEW BACKGROUND --- */
   background: linear-gradient(
     to bottom,
     #ffffff,
     #f0f2f5
   ); /* Subtle white-to-light-grey gradient */
   background-attachment: fixed; /* Keeps the gradient smooth on scroll */
-  /* --- END NEW BACKGROUND --- */
   color: #333;
 }
 
@@ -40,36 +37,52 @@ body {
 header {
   background: #ffffff;
   color: #333;
-  padding: 20px 0;
+  /* --- CHANGED --- */
+  padding: 10px 0; /* Was 20px 0 */
   border-bottom: #00c6ff 4px solid;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Ensures it's above all other content */
 }
 
-/* New header layout for logo */
 header .container {
   display: flex;
-  /* justify-content: space-between; */ /* OLD STYLE */
-  /* --- NEW CENTERING --- */
-  justify-content: center; /* This centers the logo horizontally */
-  /* --- END NEW CENTERING --- */
+  justify-content: center; /* This centers the content horizontally */
+  align-items: center;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
 header .logo img {
-  height: 60px; /* Adjust height as needed */
+  /* --- CHANGED --- */
+  height: 45px; /* Was 60px */
   width: auto;
 }
 
+.header-phone p {
+  color: #004a99;
+  font-weight: bold;
+  font-size: 1.1rem;
+  /* --- CHANGED --- */
+  margin: 5px 0 0 0; /* Was 10px 0 0 0 */
+  padding: 0;
+}
+
+/* (These old styles are no longer used but do no harm) */
 header .header-text {
   text-align: right;
 }
-
 header h1 {
   font-size: 28px;
   color: #004a99;
   margin: 0;
 }
-
 header .tagline {
   font-style: italic;
   font-size: 18px;
@@ -83,9 +96,9 @@ nav {
   color: #ffffff;
   padding: 5px 0;
   text-align: center;
-  position: sticky; /* Makes nav bar stick to top */
-  top: 0;
-  z-index: 100;
+  /* --- CHANGED --- */
+  /* Adjusted for new, smaller header size */
+  margin-top: 100px; /* Was 140px */
 }
 
 nav a {
@@ -105,6 +118,20 @@ nav a:hover {
 /* Main Content */
 main {
   padding-top: 30px;
+}
+
+/* --- NEW PROMO IMAGE STYLES --- */
+.promo-image-section {
+  background: none; /* Override default section background */
+  box-shadow: none; /* Override default section shadow */
+  padding: 0; /* Override default section padding */
+  margin-bottom: 25px;
+}
+.promo-image {
+  width: 100%;
+  border-radius: 8px; /* Match the style of other sections */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  display: block;
 }
 
 section {
@@ -138,7 +165,7 @@ section ul li {
   margin-bottom: 10px;
 }
 
-/* --- NEW CAROUSEL STYLES --- */
+/* --- CAROUSEL STYLES --- */
 .swiper {
   width: 100%;
   height: 400px; /* Give the carousel a set height */
@@ -149,7 +176,6 @@ section ul li {
   text-align: center;
   font-size: 18px;
   background: #fff;
-  /* Center slide content */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -158,21 +184,22 @@ section ul li {
 .swiper-slide img {
   display: block;
   width: 100%;
-  /* --- CSS FIX IS HERE --- */
-  height: 100%; /* Image takes up all of the slide */
+  height: 100%;
   object-fit: cover;
 }
 
-/* Removed the style for .swiper-slide h3 
-  since it's no longer in the HTML
-*/
+.swiper-slide a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 0; /* Fixes potential whitespace issues */
+}
 
 /* Style the navigation arrows to match your theme */
 :root {
   --swiper-navigation-color: #00c6ff;
   --swiper-pagination-color: #00c6ff;
 }
-/* --- END OF NEW CAROUSEL STYLES --- */
 
 /* Contact Section */
 #contact p {
